@@ -1,9 +1,10 @@
 const express = require('express')
 const mongoose = require("mongoose")
 const fs = require("fs")
-const config = JSON.parse(fs.readFileSync("./config/config.json").toString())
 const app = express()
+
 const log = require("./structures/log.js");
+const config = JSON.parse(fs.readFileSync("./config/config.json").toString())
 
 //should create a http server with port "3551"
 //creating http server does not currently work
