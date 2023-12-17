@@ -1,12 +1,7 @@
 {
 
-  {
   "mongodb": {
       "database": "mongodb://127.0.0.1/arcane"
-    }
-
-    {
-    "gameserverip": "127.0.0.1:7777"
-  }
-
- }
+  },
+  "gameServerIP": "127.0.0.1:7777"
+}
