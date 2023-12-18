@@ -17,6 +17,9 @@ const log = require("../structures/log.js");
 client.once("ready", async () => {
     log.bot("Arcane Backend has successfully connected to your Discord bot!");
 
+     // Set the presence when the bot is ready
+  client.user.setActivity('Arcane Backend', { type: 'WATCHING' });
+
     const commands = [];
 
     fs.readdirSync("./bot/cmds").forEach(fileName => {
@@ -25,7 +28,7 @@ client.once("ready", async () => {
     });
 
     const rest = new REST({ version: '9' }).setToken(config.bot.bot_token);
-
+// it updates the commands
     try {
         log.bot('Started refreshing application (/) commands.');
 
@@ -40,7 +43,7 @@ client.once("ready", async () => {
         log.error('Error refreshing application (/) commands:', error.message);
     }
 });
-
+// it checks for the commands
 client.on("interactionCreate", interaction => {
     if (!interaction.isCommand()) return;
 
