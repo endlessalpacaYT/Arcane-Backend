@@ -1,4 +1,10 @@
 {
+  "admins": ["385501118588911618"],
+  "bot": {
+      "bot_token": "MTE0MzE1NDY4OTU0MjczMzgyNQ.GF7GLI.E1Lc_rpXsK0aQ-fdhQICMvGRBnnwqWu0yGP8AQ",
+      "bot_client": "1143154689542733825",
+      "bot_guild": "1084828091404275844"
+  },
 
   "mongodb": {
       "database": "mongodb://127.0.0.1/arcane"
