@@ -1,9 +1,9 @@
 {
-  "admins": ["385501118588911618"],
+  "admins": ["your discord user id"],
   "bot": {
-      "bot_token": "MTE0MzE1NDY4OTU0MjczMzgyNQ.GF7GLI.E1Lc_rpXsK0aQ-fdhQICMvGRBnnwqWu0yGP8AQ",
-      "bot_client": "1143154689542733825",
-      "bot_guild": "1084828091404275844"
+      "bot_token": "your discord bot token",
+      "bot_client": "your discord bot client id",
+      "bot_guild": "your discord guild id"
   },
 
   "mongodb": {
