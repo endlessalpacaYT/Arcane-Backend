@@ -6,7 +6,6 @@ const app = express()
 const log = require("./structures/log.js");
 
 //should create a http server with port "3551"
-//creating http server does not currently work
 const port = 3551
 
 // lets the backend connect to the database
