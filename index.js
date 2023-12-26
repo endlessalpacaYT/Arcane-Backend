@@ -1,32 +1,28 @@
-const express = require('express')
-const mongoose = require("mongoose")
-const fs = require("fs")
-const config = JSON.parse(fs.readFileSync("./config/config.json").toString())
-const app = express()
-const log = require("./structures/log.js");
+const express = require('express');
+const mongoose = require('mongoose');
+const fs = require('fs');
+const app = express();
 
-//should create a http server with port "3551"
-const port = 3551
+const config = JSON.parse(fs.readFileSync('./config/config.json').toString());
 
-// lets the backend connect to the database
-mongoose.connect(config.mongodb.database, () => {
-    log.database("Arcane Backend has successfully connected to MongoDB.");
-});
-
-mongoose.connection.on("error", err => {
-    log.error("MongoDB failed to connect, please make sure you have MongoDB installed and running.");
-    throw err;
-})
+//listens to the port "3551" (configurable)
+const port = 3551;
 
 app.listen(port, () => {
-    log.backend(`Arcane Backend listening on port ${port}`);
-
-
-    require("./bot");
-}).on("error", async (err) => {
-    if (err.code == "EADDRINUSE") {
-        log.error(`Port ${PORT} is already in use!\nClosing in 3 seconds...`);
-        await functions.sleep(3000)
-        process.exit(0);
-    } else throw err;
+    console.log(`Arcane Backend listening on port ${port}`);
 });
+
+async function main() {
+    try {
+        await mongoose.connect(config.mongodb.database, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            // Add other options if needed
+        });
+        console.log('The Arcane Backend has successfully connected to MongoDB');
+    } catch (err) {
+        console.error('Error connecting to MongoDB:', err.message);
+    }
+}
+
+main();
