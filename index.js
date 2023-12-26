@@ -17,7 +17,6 @@ async function main() {
         await mongoose.connect(config.mongodb.database, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            // Add other options if needed
         });
         console.log('The Arcane Backend has successfully connected to MongoDB');
     } catch (err) {
