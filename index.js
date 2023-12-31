@@ -17,8 +17,6 @@ app.listen(port, () => {
 async function connectToMongo() {
     try {
         await mongoose.connect(config.mongodb.database, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
         });
 
         const testDocument = new TestModel({ name: 'test' });
