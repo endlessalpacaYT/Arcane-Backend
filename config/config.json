@@ -2,8 +2,8 @@
   "admins": ["your discord user id"],
   "bot": {
       "bot_token": "your discord bot token",
-      "bot_client": "your discord bot client id",
-      "bot_guild": "your discord guild id"
+      "bot_client": "why tf is this needed",
+      "bot_guild": "why tf is this needed"
   },
 
   "mongodb": {
