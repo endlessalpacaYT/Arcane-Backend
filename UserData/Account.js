@@ -4,6 +4,7 @@ const AccountSchema = mongoose.Schema(
     {
         discordId: { type: string, required: true, unique: true }
         accountId: { type: string, required: true, unique: true }
+        banned: { type: Boolean, default: false },
         username: { type: string, required: true, unique: true }
         email: { type: string, required: true, unique: true }
         password: { type: string, required: true }
